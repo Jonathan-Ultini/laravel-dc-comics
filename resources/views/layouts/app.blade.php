@@ -12,16 +12,12 @@
 </head>
 
 <body>
-  {{-- includi header --}}
-  @include("partials.header")
 
   {{-- inserisci contenuti da chi estende --}}
   <main>
     @yield("main-content")
   </main>
 
-  {{-- includi footer --}}
-  @include("partials.footer")
 
   @vite("resources/js/app.js")
   @yield("additional-scripts")

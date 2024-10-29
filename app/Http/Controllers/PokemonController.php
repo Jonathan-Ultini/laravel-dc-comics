@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PokemonController extends Controller
 {
@@ -31,11 +32,13 @@ class PokemonController extends Controller
      */
     public function store(Request $request)
     {
+
+        Log::info('Dati ricevuti:', $request->all());
         $request->validate([
             'name' => 'required|string|max:255',
             'form' => 'required|string|max:255',
-            'type1' => 'required|string|min:0',
-            'type2' => 'required|string|min:0',
+            'type1' => 'required|string|max:255',
+            'type2' => 'nullable|string|min:0',
             'total' => 'required|integer|min:0',
             'hp' => 'required|integer|min:0',
             'attack' => 'required|integer|min:0',
@@ -45,7 +48,7 @@ class PokemonController extends Controller
             'speed' => 'required|integer|min:0',
             'generation' => 'required|integer|min:0',
         ]);
-
+        dd($request->all());
         Pokemon::create($request->all());
         return redirect()->route('pokemons.index')->with('success', 'Pokémon creato con successo!');
     }

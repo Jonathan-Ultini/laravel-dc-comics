@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('form');
             $table->string('type1');
-            $table->string('type2');
+            $table->string('type2')->nullable();
             $table->integer('total');
             $table->integer('hp');
             $table->integer('attack');

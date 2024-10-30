@@ -32,8 +32,8 @@ class PokemonController extends Controller
      */
     public function store(Request $request)
     {
-
-        Log::info('Dati ricevuti:', $request->all());
+        // dd($request->all());
+        // Log::info('Dati ricevuti:', $request->all());
         $request->validate([
             'name' => 'required|string|max:255',
             'form' => 'required|string|max:255',
@@ -43,12 +43,11 @@ class PokemonController extends Controller
             'hp' => 'required|integer|min:0',
             'attack' => 'required|integer|min:0',
             'defense' => 'required|integer|min:0',
-            'sp-atk' => 'required|integer|min:0',
-            'sp-def' => 'required|integer|min:0',
+            'sp_atk' => 'required|integer|min:0',
+            'sp_def' => 'required|integer|min:0',
             'speed' => 'required|integer|min:0',
             'generation' => 'required|integer|min:0',
         ]);
-        dd($request->all());
         Pokemon::create($request->all());
         return redirect()->route('pokemons.index')->with('success', 'Pokémon creato con successo!');
     }

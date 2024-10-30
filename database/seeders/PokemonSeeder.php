@@ -28,8 +28,8 @@ class PokemonSeeder extends Seeder
                 'HP' => 'hp',
                 'Attack' => 'attack',
                 'Defense' => 'defense',
-                'Sp-Atk' => 'sp-atk',
-                'Sp-def' => 'sp-def',
+                'Sp_Atk' => 'sp_atk',
+                'Sp_def' => 'sp_def',
                 'Speed' => 'speed',
                 'Generation' => 'generation',
             ];

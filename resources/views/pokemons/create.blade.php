@@ -24,7 +24,7 @@
 
   <div class="form-group">
     <label for="form">Forma:</label>
-    <input type="text" id="form" name="form" class="form-control" required>
+    <input type="text" id="form" name="form" class="form-control">
   </div>
 
   <div class="form-group">

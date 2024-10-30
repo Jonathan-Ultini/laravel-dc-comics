@@ -78,5 +78,6 @@
   </div>
 
   <button type="submit" class="btn btn-primary">Salva Pokémon</button>
+  <a href="{{ route('pokemons.index') }}" class="btn btn-secondary">Torna Indietro</a>
 </form>
 @endsection

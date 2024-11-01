@@ -11,7 +11,7 @@ class PokemonSeeder extends Seeder
     public function run()
     {
         // Percorso del file CSV
-        $csvPath = storage_path('app/pokemons.csv');
+        $csvPath = storage_path('app/public/pokemons.csv');
 
         // Apri il file e leggi ogni riga
         if (($handle = fopen($csvPath, 'r')) !== false) {
